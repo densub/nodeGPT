@@ -28,6 +28,20 @@ cd NodeGPT
 # Pull the latest changes
 git pull
 
+# Navigate back to the custom_nodes folder
+cd ..
+
+# Clone the ComfyUI Manager if it doesn't exist
+if [ ! -d "ComfyUI-Manager" ]; then
+    git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+fi
+
+# Navigate into the NodeGPT repository
+cd ComfyUI-Manager
+
+# Pull the latest changes
+git pull
+
 # Navigate back to the Comfy UI repository
 cd ..
 cd ..
@@ -46,6 +60,15 @@ pip install torchvision
 
 # Navigate into the NodeGPT repo to install it's dependencies
 cd custom_nodes/NodeGPT
+
+# Install dependencies for the ComfyUI repository
+pip install -r requirements.txt
+
+# Navigate back to the Comfy UI repository
+cd ..
+
+# Navigate into the comfyUI manager repo to install it's dependencies
+cd ComfyUI-Manager
 
 # Install dependencies for the ComfyUI repository
 pip install -r requirements.txt
